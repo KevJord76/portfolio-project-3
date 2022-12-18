@@ -52,8 +52,32 @@ def get_random_sports_person():
     """
     sport_list = list(sport.items())
     random_sports_person = random.choice(sport_list)
-    print(random_sports_person)
+    
+    return random_sports_person
 
+def play_game(game_name_and_clue):
+    """
+    Play the hangman game with the randomly selected famous person 
+    """
+    
+    # Store the name and clue
+    name = game_name_and_clue[0].upper()
+    clue = game_name_and_clue[1]
+
+    # Inform the user
+    print("\nCan you guess the famous person below?\n")
+
+    # Print underscores and spaces to denote the characters in the name 
+    for char in name:
+        if char != " ":
+            print("_", end=' ')
+        else:
+            print(char, end=' ')
+    print("\n")
+
+    # Ask the user for a character
+    character = input("Please enter a character:\n")
+    
 def main():
     """
     Run all program functions
@@ -75,8 +99,10 @@ def main():
                 category = categories[choice-1]
                 print(f"You chose option no {choice}. {category}")                                
                 if choice == 1:
-                    get_random_sports_person()
+                    name_and_clue = get_random_sports_person()
                 
+                # We now have a name to play the game, convert the name to uppercase
+                play_game(name_and_clue)
                     
                 break   
 
