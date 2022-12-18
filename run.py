@@ -1,3 +1,5 @@
+import random
+
 # Hangman game categories
 categories = ["Sport","Music","Movies"]
 
@@ -36,12 +38,21 @@ def validate_choice(chosen):
     try:
         chosen = int(chosen)
         if not chosen in range(1,len(categories)+1) and not chosen == 99:
-            raise ValueError("Incorrect menu option")
+            raise ValueError("incorrect menu option")
     except ValueError as e:
-        print(f"Invalid data: {e}, please try again:\n")   
+        print(f"Invalid data: {e}, please try again!\n")   
         return False
 
     return True   
+
+def get_random_sports_person():
+    """
+    Convert the sport dictionary into a list and
+    randomly select a sports star from the list
+    """
+    sport_list = list(sport.items())
+    random_sports_person = random.choice(sport_list)
+    print(random_sports_person)
 
 def main():
     """
@@ -61,8 +72,15 @@ def main():
                 exit() 
             else:
                 # Valid menu option chosen
-                print(f"You chose option no {choice}. {categories[choice-1]}")  
+                category = categories[choice-1]
+                print(f"You chose option no {choice}. {category}")                                
+                if choice == 1:
+                    get_random_sports_person()
+                
+                    
                 break   
-                      
+
+        
+
 # Call the main function
 main()
