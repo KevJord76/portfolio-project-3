@@ -1,6 +1,15 @@
 # Hangman game categories
 categories = ["Sport","Music","Movies"]
 
+# Sport dictionary list of famous names and clues
+sport = {
+    'Lionel Messi': 'Argentine football player',
+    'Serena Williams': 'American tennis player',
+    'LeBron James': 'American basketball player',
+    'Lydia Ko': 'New Zealand golf player',
+    'Max Verstappen': 'Belgian-Dutch motorsports racing driver'
+}
+
 def display_menu():
     """
     # Display the hangman game main menu
