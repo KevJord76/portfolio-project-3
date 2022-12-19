@@ -1,6 +1,9 @@
 # Import the random library
 import random
 
+# Import os library
+import os
+
 # Hangman game categories
 categories = ["Sport","Music","Movies"]
 
@@ -99,7 +102,7 @@ def play_game(game_name_and_clue):
         character = input("Please enter a character:\n")
         character = character.upper()
         if (character in right_guesses) or (character in wrong_guesses):
-            print("You have already guessed this letter, please try again:")
+            print(f'You have already guessed this letter:"{character}", please try again:')
         else:
             # Is the character in the name?
             if character in name:
@@ -112,7 +115,7 @@ def play_game(game_name_and_clue):
                 if life_lines == 1:
                     # Ask the user if they want to see a clue
                     print(f"You have only {life_lines} life line left...\n")
-                    see_clue = input("Do you want to see a clue? Y/N:\n")
+                    see_clue = input("Do you want to see a clue? Y/y to see one, any key to continue:\n")
                     see_clue = see_clue.upper()
                     # Display a clue for the user
                     if see_clue == "Y":
@@ -133,6 +136,9 @@ def main():
     
     # Get the user's menu choice
     while True:  
+        # Clear the screen
+        os.system('clear')
+        # Display the menu
         display_menu()      
         choice = input("Please enter your choice:\n")
         if validate_choice(choice):
@@ -153,7 +159,7 @@ def main():
                 play_game(name_and_clue)
 
                 # Ask the user if they want to play again
-                play_again = input("Do you want to play again? N to exit, any key to continue:\n")
+                play_again = input("Do you want to play again? N/n to exit, any key to continue:\n")
                 play_again = play_again.upper()    
                 if play_again == "N":
                     break   
