@@ -130,10 +130,10 @@ def main():
     """
     Run all program functions
     """
-    display_menu()
-
+    
     # Get the user's menu choice
-    while True:        
+    while True:  
+        display_menu()      
         choice = input("Please enter your choice:\n")
         if validate_choice(choice):
             # Convert to an integer
@@ -151,8 +151,12 @@ def main():
                 
                 # We now have a name to play the game, convert the name to uppercase
                 play_game(name_and_clue)
-                    
-                break   
+
+                # Ask the user if they want to play again
+                play_again = input("Do you want to play again? N to exit, any key to continue:\n")
+                play_again = play_again.upper()    
+                if play_again == "N":
+                    break   
 
         
 
