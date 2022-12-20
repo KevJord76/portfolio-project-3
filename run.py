@@ -4,6 +4,9 @@ import random
 # Import os library
 import os
 
+# Import time library
+import time
+
 # Hangman game categories
 categories = ["Sport","Music","Movies"]
 
@@ -53,7 +56,9 @@ def validate_choice(chosen):
         if not chosen in range(1,len(categories)+1) and not chosen == 99:
             raise ValueError("incorrect menu option")
     except ValueError as e:
-        print(f"Invalid data: {e}, please try again!\n")   
+        print(f"Invalid data: {e}, please try again!\n")  
+        # Pause the output to allow the user to see the error message
+        time.sleep(2); 
         return False
 
     return True   
@@ -162,7 +167,8 @@ def main():
         # Display the menu
         display_menu()      
         choice = input("Please enter your choice:\n")
-        if validate_choice(choice):
+        valid_input = validate_choice(choice)
+        if valid_input:
             # Convert to an integer
             choice = int(choice)
             # Exit the game
