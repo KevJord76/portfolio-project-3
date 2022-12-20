@@ -68,6 +68,17 @@ def get_random_sports_person():
     
     return random_sports_person
 
+def get_random_music_person():
+    """
+    Convert the music dictionary into a list and
+    randomly select a music icon from the list
+    """
+    music_list = list(music.items())
+    random_music_person = random.choice(music_list)
+    
+    return random_music_person
+
+
 def play_game(game_name_and_clue):
     """
     Play the hangman game with the randomly selected famous person 
@@ -129,7 +140,7 @@ def play_game(game_name_and_clue):
                     see_clue = see_clue.upper()
                     # Display a clue for the user
                     if see_clue == "Y":
-                        print(clue)
+                        print(f"\n{clue}")
                 elif life_lines == 0:
                     # This game has ended with a loss
                     print("Sorry you are out of life lines! You have lost this game...\n")
@@ -164,7 +175,8 @@ def main():
                 print(f"You chose option no {choice}. {category}")                                
                 if choice == 1:
                     name_and_clue = get_random_sports_person()
-                
+                elif choice == 2:
+                    name_and_clue = get_random_music_person()
                 # We now have a name to play the game, convert the name to uppercase
                 play_game(name_and_clue)
 
