@@ -8,7 +8,7 @@ import os
 import time
 
 # Hangman game categories
-categories = ["Sport","Music","Movies"]
+categories = ["Sport","Music","Movies","Authors"]
 
 # Sport dictionary of famous names and clues
 sport = {
@@ -118,6 +118,16 @@ def get_random_movies_person():
     random_movies_person = random.choice(movies_list)
     
     return random_movies_person
+
+def get_random_author():
+    """
+    Convert the authors dictionary into a list and
+    randomly select an author from the list
+    """
+    authors_list = list(authors.items())
+    random_author = random.choice(authors_list)
+    
+    return random_author
 
 def play_game(game_name_and_clue):
     """
@@ -229,8 +239,10 @@ def main():
                     name_and_clue = get_random_sports_person()
                 elif choice == 2:
                     name_and_clue = get_random_music_person()
-                else:
+                elif choice == 3:
                     name_and_clue = get_random_movies_person()
+                else:
+                    name_and_clue = get_random_author()
 
                 # We now have a name to play the game
                 play_game(name_and_clue)
