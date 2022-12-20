@@ -86,6 +86,10 @@ def validate_character(letter):
     Check if the user has entered a value from A-Z 
     """
     valid_letter = letter.isalpha()
+
+    # Also check for a character of ".", which a name could contain 
+    if letter == ".":
+        valid_letter = True
     
     return valid_letter   
 
