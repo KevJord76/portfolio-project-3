@@ -37,6 +37,15 @@ movies = {
     'Will Smith': 'Men in Black'
 }
 
+# Authors dictionary of famous names and clues
+authors = {
+    'Stephen King': 'The Shining',
+    'J. K. Rowling': 'Harry Potter',
+    'John Grisham': 'The Firm',
+    'Sally Rooney': 'Normal People',
+    'John Irving': 'The Cider House Rules'
+}
+
 def display_menu():
     """
     Display the hangman game main menu
