@@ -7,13 +7,22 @@ import os
 # Hangman game categories
 categories = ["Sport","Music","Movies"]
 
-# Sport dictionary list of famous names and clues
+# Sport dictionary of famous names and clues
 sport = {
     'Lionel Messi': 'Argentine football player',
     'Serena Williams': 'American tennis player',
     'LeBron James': 'American basketball player',
     'Lydia Ko': 'New Zealand golfer',
     'Max Verstappen': 'Belgian-Dutch motorsports racing driver'
+}
+
+# Music dictionary of famous names and clues
+music = {
+    'Dermot Kennedy': 'Irish singer-songwriter',
+    'Taylor Swift': 'American singer-songwriter',
+    'Lewis Capaldi': 'Scottish singer-songwriter',
+    'Ellie Goulding': 'English singer-songwriter',
+    'Kylie Minogue': 'Australian singer-songwriter'
 }
 
 def display_menu():
