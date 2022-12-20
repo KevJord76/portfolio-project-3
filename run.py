@@ -76,7 +76,8 @@ def play_game(game_name_and_clue):
     life_lines = 6
 
     # Inform the user
-    print("\nCan you guess the famous person below?\n")
+    print("\nCan you guess the famous person below?")
+    print(f"You have {life_lines} life lines in total\n")
 
     # As long as the user has life lines left, keep playing
     while life_lines > 0: 
@@ -159,7 +160,7 @@ def main():
                 play_game(name_and_clue)
 
                 # Ask the user if they want to play again
-                play_again = input("Do you want to play again? N/n to exit, any key to continue:\n")
+                play_again = input("\nDo you want to play again? N/n to exit, any key to continue:\n")
                 play_again = play_again.upper()    
                 if play_again == "N":
                     break   
