@@ -28,6 +28,15 @@ music = {
     'Kylie Minogue': 'Australian singer-songwriter'
 }
 
+# Movies dictionary of famous names and clues
+movies = {
+    'Tom Hanks': 'Forrest Gump',
+    'Margot Robbie': 'I, Tonya',
+    'Kate Winslet': 'Titanic',
+    'Leonardo DiCaprio': 'The Wolf of Wall Street',
+    'Will Smith': 'Men in Black'
+}
+
 def display_menu():
     """
     # Display the hangman game main menu
