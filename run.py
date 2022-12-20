@@ -170,9 +170,12 @@ def play_game(game_name_and_clue):
                 else:
                     print(f"You have {life_lines} life lines left...\n")
 
-        
+def end_game_message():
+    """
+    Say good bye to the user 
+    """
+    print("\nBye, bye, please play again soon!")
 
-    
 def main():
     """
     Run main program functions
@@ -191,7 +194,8 @@ def main():
             choice = int(choice)
             # Exit the game
             if choice == 99:
-                print("Bye, bye, please play again soon!")
+                # Display end of game message
+                end_game_message()
                 exit() 
             else:
                 # Valid menu option chosen
@@ -211,7 +215,8 @@ def main():
                 play_again = input("\nDo you want to play again? N/n to exit, any key to continue:\n")
                 play_again = play_again.upper()    
                 if play_again == "N":
-                    print("Bye, bye, please play again soon!")
+                    # Display end of game message
+                    end_game_message()
                     break 
   
 # Call the main function
