@@ -67,7 +67,7 @@ def validate_choice(chosen):
     except ValueError as e:
         print(f"Invalid data: {e}, please try again!\n")  
         # Pause the output to allow the user to see the error message
-        time.sleep(2); 
+        time.sleep(3); 
         return False
 
     return True   
@@ -101,7 +101,6 @@ def get_random_movies_person():
     random_movies_person = random.choice(movies_list)
     
     return random_movies_person
-
 
 def play_game(game_name_and_clue):
     """
@@ -176,7 +175,7 @@ def play_game(game_name_and_clue):
     
 def main():
     """
-    Run all program functions
+    Run main program functions
     """
     
     # Get the user's menu choice
@@ -205,7 +204,7 @@ def main():
                 else:
                     name_and_clue = get_random_movies_person()
 
-                # We now have a name to play the game, convert the name to uppercase
+                # We now have a name to play the game
                 play_game(name_and_clue)
 
                 # Ask the user if they want to play again
