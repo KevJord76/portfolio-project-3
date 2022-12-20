@@ -92,6 +92,16 @@ def get_random_music_person():
     
     return random_music_person
 
+def get_random_movies_person():
+    """
+    Convert the movies dictionary into a list and
+    randomly select a movie star from the list
+    """
+    movies_list = list(movies.items())
+    random_movies_person = random.choice(movies_list)
+    
+    return random_movies_person
+
 
 def play_game(game_name_and_clue):
     """
@@ -192,6 +202,9 @@ def main():
                     name_and_clue = get_random_sports_person()
                 elif choice == 2:
                     name_and_clue = get_random_music_person()
+                else:
+                    name_and_clue = get_random_movies_person()
+
                 # We now have a name to play the game, convert the name to uppercase
                 play_game(name_and_clue)
 
@@ -199,9 +212,8 @@ def main():
                 play_again = input("\nDo you want to play again? N/n to exit, any key to continue:\n")
                 play_again = play_again.upper()    
                 if play_again == "N":
-                    break   
-
-        
-
+                    print("Bye, bye, please play again soon!")
+                    break 
+  
 # Call the main function
 main()
