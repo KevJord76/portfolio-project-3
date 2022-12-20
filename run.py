@@ -1,10 +1,10 @@
 # Import the random library
 import random
 
-# Import os library
+# Import the os library
 import os
 
-# Import time library
+# Import the time library
 import time
 
 # Hangman game categories
@@ -39,7 +39,7 @@ movies = {
 
 def display_menu():
     """
-    # Display the hangman game main menu
+    Display the hangman game main menu
     """
     print("-" * 49)
     print("Welcome to Guess the Famous Person Hangman Game")
@@ -51,7 +51,7 @@ def display_menu():
         print(str(i+1)+". ", categories[i])  
 
     # Allow the user to exit the game
-    print("(99 to exit)\n")
+    print("(99) to exit\n")
 
 def validate_choice(chosen):
     """
@@ -71,6 +71,14 @@ def validate_choice(chosen):
         return False
 
     return True   
+
+def validate_character(letter):
+    """
+    Check if the user has entered a value from A-Z 
+    """
+    valid_letter = letter.isalpha()
+    
+    return valid_letter   
 
 def get_random_sports_person():
     """
@@ -126,7 +134,7 @@ def play_game(game_name_and_clue):
     while life_lines > 0: 
         # If this stays at True the user has won
         winner = True
-        # Print underscores and spaces to denote the characters in the name or else print the valid characters 
+        # Print underscores and spaces to denote the characters in the name or else print the found characters 
         for char in name:
             if (char != " ") and (char not in right_guesses):
                 print("_", end=' ')
@@ -144,31 +152,37 @@ def play_game(game_name_and_clue):
 
         # Ask the user for a character
         character = input("Please enter a character:\n")
-        character = character.upper()
-        if (character in right_guesses) or (character in wrong_guesses):
-            print(f'You have already guessed this letter:"{character}", please try again:')
+        # Is the input valid?
+        valid_input = validate_character(character)
+        if not valid_input:
+            print(f'\nPlease note! You must enter a character from A-Z, you entered:"{character}"\n')
         else:
-            # Is the character in the name?
-            if character in name:
-                print("Well done! This letter is in the famous person's name")
-                right_guesses += character
+            # Valid Input
+            character = character.upper()
+            if (character in right_guesses) or (character in wrong_guesses):
+                print(f'You have already guessed this letter:"{character}", please try again:')
             else:
-                print("Hard luck, this letter is not in the famous person's name")
-                wrong_guesses += character
-                life_lines -= 1
-                if life_lines == 1:
-                    # Ask the user if they want to see a clue
-                    print(f"You have only {life_lines} life line left...\n")
-                    see_clue = input("Do you want to see a clue? Y/y to see one, any key to continue:\n")
-                    see_clue = see_clue.upper()
-                    # Display a clue for the user
-                    if see_clue == "Y":
-                        print(f"\n{clue}")
-                elif life_lines == 0:
-                    # This game has ended with a loss
-                    print("Sorry you are out of life lines! You have lost this game...\n")
+                # Is the character in the name?
+                if character in name:
+                    print("Well done! This letter is in the famous person's name")
+                    right_guesses += character
                 else:
-                    print(f"You have {life_lines} life lines left...\n")
+                    print("Hard luck, this letter is not in the famous person's name")
+                    wrong_guesses += character
+                    life_lines -= 1
+                    if life_lines == 1:
+                        # Ask the user if they want to see a clue
+                        print(f"You have only {life_lines} life line left...\n")
+                        see_clue = input("Do you want to see a clue? Y/y to see one, any key to continue:\n")
+                        see_clue = see_clue.upper()
+                        # Display a clue for the user
+                        if see_clue == "Y":
+                            print(f"\n{clue}")
+                    elif life_lines == 0:
+                        # This game has ended with a loss
+                        print("Sorry you are out of life lines! You have lost this game...\n")
+                    else:
+                        print(f"You have {life_lines} life lines left...\n")
 
 def end_game_message():
     """
@@ -188,6 +202,7 @@ def main():
         # Display the menu
         display_menu()      
         choice = input("Please enter your choice:\n")
+        # Is the input valid?
         valid_input = validate_choice(choice)
         if valid_input:
             # Convert to an integer
