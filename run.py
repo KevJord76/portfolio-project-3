@@ -207,7 +207,8 @@ def play_game(game_name_and_clue):
         # Has the user won?
         if winner:
             # This game has ended with a win
-            print(f"Congrats! You have won the game! You have guessed the famous person: {name}")
+            print("Congrats! You have won the game!")
+            print(f"You have guessed the famous person: {name}")
             break
 
         # Ask the user for a character
