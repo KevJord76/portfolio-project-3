@@ -97,12 +97,13 @@ def validate_choice(chosen):
 
 def validate_character(letter):
     """
-    Check if the user has entered a value from A-Z 
+    Check if the user has entered a value from A-Z or "." and "'" 
+    Also check that only one character has been entered 
     """
-    valid_letter = letter.isalpha()
+    valid_letter = (letter.isalpha()) and (len(letter) == 1)
 
     # Also check for the characters of "." and "'", which a name could contain
-    if (letter == ".") or (letter == "'") :
+    if (letter == ".") or (letter == "'"):
         valid_letter = True
     
     return valid_letter   
@@ -202,7 +203,7 @@ def play_game(game_name_and_clue):
         # Is the input valid?
         valid_input = validate_character(character)
         if not valid_input:
-            print(f'\nPlease note! You must enter a character from A-Z, you entered:"{character}"\n')
+            print(f'\nPlease note! You must enter only 1 valid name character, you entered:"{character}"\n')
         else:
             # Valid Input
             character = character.upper()
