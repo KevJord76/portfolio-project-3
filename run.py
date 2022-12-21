@@ -101,8 +101,8 @@ def validate_character(letter):
     """
     valid_letter = letter.isalpha()
 
-    # Also check for a character of ".", which a name could contain 
-    if letter == ".":
+    # Also check for the characters of "." and "'", which a name could contain
+    if (letter == ".") or (letter == "'") :
         valid_letter = True
     
     return valid_letter   
