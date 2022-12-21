@@ -71,6 +71,7 @@ def display_menu():
 
     # Display the hangman game categories
     for i in range(len(categories)):
+        # Remember index starts at zero
         print(str(i+1)+". ", categories[i])  
 
     # Allow the user to exit the game
@@ -78,6 +79,8 @@ def display_menu():
 
 def validate_choice(chosen):
     """
+    (try: except code example written in Code Institute's LoveSandwiches walk-through 
+    project used and modified to cater for the needs of this program.)
     Validate the menu choice made by the user:
     Inside the try, converts chosen string into an integer
     Raises valueError if string cannot be converted into an integer 
@@ -85,6 +88,7 @@ def validate_choice(chosen):
     """
     try:
         chosen = int(chosen)
+        # Is the user choice valid? 
         if not chosen in range(1,len(categories)+1) and not chosen == 99:
             raise ValueError("incorrect menu option")
     except ValueError as e:
@@ -97,9 +101,10 @@ def validate_choice(chosen):
 
 def validate_character(letter):
     """
-    Check if the user has entered a value from A-Z or "." and "'" 
+    Check if the user has entered a value from A-Z or a full-stop or a single quote 
     Also check that only one character has been entered 
     """
+    # Is the character valid? 
     valid_letter = (letter.isalpha()) and (len(letter) == 1)
 
     # Also check for the characters of "." and "'", which a name could contain
@@ -114,6 +119,7 @@ def get_random_sports_person():
     randomly select a sports star from the list
     """
     sport_list = list(sport.items())
+    # Get a random name from the list
     random_sports_person = random.choice(sport_list)
     
     return random_sports_person
@@ -124,6 +130,7 @@ def get_random_music_person():
     randomly select a music icon from the list
     """
     music_list = list(music.items())
+    # Get a random name from the list
     random_music_person = random.choice(music_list)
     
     return random_music_person
@@ -134,6 +141,7 @@ def get_random_movies_person():
     randomly select a movie star from the list
     """
     movies_list = list(movies.items())
+    # Get a random name from the list
     random_movies_person = random.choice(movies_list)
     
     return random_movies_person
@@ -144,6 +152,7 @@ def get_random_author():
     randomly select an author from the list
     """
     authors_list = list(authors.items())
+    # Get a random name from the list
     random_author = random.choice(authors_list)
     
     return random_author
@@ -154,6 +163,7 @@ def get_random_misc_person():
     randomly select a famous person from the list
     """
     misc_list = list(general.items())
+    # Get a random name from the list
     random_misc_person = random.choice(misc_list)
     
     return random_misc_person
@@ -185,10 +195,12 @@ def play_game(game_name_and_clue):
         # Print underscores and spaces to denote the characters in the name or else print the found characters 
         for char in name:
             if (char != " ") and (char not in right_guesses):
+                # Print underscore and space
                 print("_", end=' ')
                 # Still letter(s) to be found 
                 winner = False
             else:
+                # Print correct letter and space
                 print(char, end=' ')
         print("\n")
 
@@ -207,6 +219,7 @@ def play_game(game_name_and_clue):
         else:
             # Valid Input
             character = character.upper()
+            # Has this letter been guessed before?
             if (character in right_guesses) or (character in wrong_guesses):
                 print(f'You have already guessed this letter:"{character}", please try again:')
             else:
@@ -264,6 +277,7 @@ def main():
                 # Valid menu option chosen
                 category = categories[choice-1]
                 print(f"You chose option no {choice}. {category}")                                
+                # Check which category was chosen
                 if choice == 1:
                     name_and_clue = get_random_sports_person()
                 elif choice == 2:
