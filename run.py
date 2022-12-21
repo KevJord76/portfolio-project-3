@@ -46,6 +46,20 @@ authors = {
     'John Irving': 'The Cider House Rules'
 }
 
+# General knowledge dictionary of famous names and clues
+general = {
+    "Seán O'Casey": 'Irish dramatist and memoirist',
+    'Joan of Arc': 'Saint',
+    'Nelson Mandela': 'South African anti-apartheid activist',
+    'Édith Piaf': 'French singer, lyricist and actress',
+    'Marie Curie': 'Polish-French physicist',
+    'Cristiano Ronaldo': 'Portuguese footballer',
+    'Rihanna': 'Barbadian singer',
+    'Winston Churchill': 'Former Prime Minister of the United Kingdom',
+    'Volodymyr Zelenskyy': 'Ukrainian leader',
+    'Constance Markievicz': 'Irish politician, revolutionary, nationalist, suffragist, socialist'
+}
+
 def display_menu():
     """
     Display the hangman game main menu
