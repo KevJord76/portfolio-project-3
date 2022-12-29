@@ -141,8 +141,7 @@ def display_guessed_letters(correct,incorrect):
     """
     Display the guessed correct and incorrect letters
     """
-    print(f"Correct Guesses: {correct}, Incorrect Guesses: {incorrect}\n")
-
+    print(f"Correct Guesses:    {correct}\nIncorrect Guesses:  {incorrect}\n")
 
 def play_game(game_name_and_clue):
     """
@@ -196,13 +195,17 @@ def play_game(game_name_and_clue):
         # Is the input valid?
         valid_input = validate_character(character)
         if not valid_input:
-            print(f'Please note!\nYou must enter only 1 valid name character, you entered:"{character}"\n')
+            print(f'Please note! You must enter only 1 valid name character, you entered:"{character}"')
+            # Display the number of life lines left
+            display_life_lines(life_lines) 
         else:
             # Valid Input
             character = character.upper()
             # Has this letter been guessed before?
             if (character in right_guesses) or (character in wrong_guesses):
-                print(f'Please note!\nYou have already guessed this letter:"{character}", please try again:\n')
+                print(f'Please note! You have already guessed this letter:"{character}", please try again:')
+                # Display the number of life lines left
+                display_life_lines(life_lines) 
             else:
                 # Is the character in the name?
                 if character in name:
@@ -220,9 +223,13 @@ def play_game(game_name_and_clue):
                         # Ask the user if they want to see a clue
                         see_clue = input("Do you want to see a clue? Y/y to see one, any key to continue:\n")
                         see_clue = see_clue.upper()
+                        # Clear the screen
+                        clear_screen()  
+                        # Display the number of life lines left
+                        display_life_lines(life_lines)
                         # Display a clue for the user
                         if see_clue == "Y":
-                            print(f"\n{clue}")
+                            print(f"Clue: {clue}\n")
                     elif life_lines == 0:
                         # This game has ended with a loss
                         print("Sorry you are out of life lines! You have lost this game...\n")
@@ -230,14 +237,19 @@ def play_game(game_name_and_clue):
                         # Display the number of life lines left
                         display_life_lines(life_lines)
 
-        # Display the guessed letters                        
-        display_guessed_letters(right_guesses, wrong_guesses)  
+        # Display the guessed letters    
+        if life_lines > 0:                    
+            display_guessed_letters(right_guesses, wrong_guesses)  
    
 def end_game_message():
     """
     Say good bye to the user 
     """
-    print("\nBye, bye, please play again soon!")
+    
+    # Clear the screen
+    clear_screen()
+    # Bye, bye message
+    print("Bye, bye, please play again soon...")
 
 def main():
     """
