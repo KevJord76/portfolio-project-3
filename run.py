@@ -98,7 +98,7 @@ def validate_choice(chosen):
     except ValueError as e:
         print(f"Invalid data: {e}, please try again!\n")  
         # Pause the output to allow the user to see the error message
-        time.sleep(3); 
+        time.sleep(2); 
         return False
 
     return True   
@@ -128,16 +128,14 @@ def get_random_person(category):
     
     return random_person
 
-def display_life_lines(lives_left, won):
+def display_life_lines(lives_left):
     """
     Display the number of life lines the user has left
     """
     if lives_left == 1:
-        if not won:
-            print(f"You have only {lives_left} life line left...\n")
+        print(f"You have only {lives_left} life line left...\n")
     else:
-        if not won:
-            print(f"You have {lives_left} life lines left...\n")
+        print(f"You have {lives_left} life lines left...\n")
 
 def play_game(game_name_and_clue):
     """
@@ -191,27 +189,27 @@ def play_game(game_name_and_clue):
         # Is the input valid?
         valid_input = validate_character(character)
         if not valid_input:
-            print(f'\nPlease note! You must enter only 1 valid name character, you entered:"{character}"\n')
+            print(f'Please note!\nYou must enter only 1 valid name character, you entered:"{character}"\n')
         else:
             # Valid Input
             character = character.upper()
             # Has this letter been guessed before?
             if (character in right_guesses) or (character in wrong_guesses):
-                print(f'You have already guessed this letter:"{character}", please try again:')
+                print(f'Please note!\nYou have already guessed this letter:"{character}", please try again:\n')
             else:
                 # Is the character in the name?
                 if character in name:
                     print("Well done! This letter is in the famous person's name")
                     right_guesses += character
                     # Display the number of life lines left
-                    display_life_lines(life_lines, winner)                    
+                    display_life_lines(life_lines)                    
                 else:
                     print("Hard luck, this letter is not in the famous person's name")
                     wrong_guesses += character
                     life_lines -= 1
                     if life_lines == 1:
                         # Display the number of life lines left
-                        display_life_lines(life_lines, winner)
+                        display_life_lines(life_lines)
                         # Ask the user if they want to see a clue
                         see_clue = input("Do you want to see a clue? Y/y to see one, any key to continue:\n")
                         see_clue = see_clue.upper()
@@ -223,7 +221,7 @@ def play_game(game_name_and_clue):
                         print("Sorry you are out of life lines! You have lost this game...\n")
                     else:
                         # Display the number of life lines left
-                        display_life_lines(life_lines, winner)  
+                        display_life_lines(life_lines)  
     
 def end_game_message():
     """
@@ -243,12 +241,12 @@ def main():
         # Display the menu
         display_menu()      
         choice = input("Please enter your choice:\n")
-         # Clear the screen
-        clear_screen()
-
+        
         # Is the input valid?
         valid_input = validate_choice(choice)
         if valid_input:
+            # Clear the screen
+            clear_screen()
             # Convert to an integer
             choice = int(choice)
             # Exit the game
