@@ -113,60 +113,16 @@ def validate_character(letter):
     
     return valid_letter   
 
-def get_random_sports_person():
+def get_random_person(category):
     """
-    Convert the sport dictionary into a list and
-    randomly select a sports star from the list
+    Convert the chosen category dictionary into a list 
+    and randomly select a famous person from the list
     """
-    sport_list = list(sport.items())
+    selected_list = list(category.items())
     # Get a random name from the list
-    random_sports_person = random.choice(sport_list)
+    random_person = random.choice(selected_list)
     
-    return random_sports_person
-
-def get_random_music_person():
-    """
-    Convert the music dictionary into a list and
-    randomly select a music icon from the list
-    """
-    music_list = list(music.items())
-    # Get a random name from the list
-    random_music_person = random.choice(music_list)
-    
-    return random_music_person
-
-def get_random_movies_person():
-    """
-    Convert the movies dictionary into a list and
-    randomly select a movie star from the list
-    """
-    movies_list = list(movies.items())
-    # Get a random name from the list
-    random_movies_person = random.choice(movies_list)
-    
-    return random_movies_person
-
-def get_random_author():
-    """
-    Convert the authors dictionary into a list and
-    randomly select an author from the list
-    """
-    authors_list = list(authors.items())
-    # Get a random name from the list
-    random_author = random.choice(authors_list)
-    
-    return random_author
-
-def get_random_misc_person():
-    """
-    Convert the general knowledge dictionary into a list and
-    randomly select a famous person from the list
-    """
-    misc_list = list(general.items())
-    # Get a random name from the list
-    random_misc_person = random.choice(misc_list)
-    
-    return random_misc_person
+    return random_person
 
 def play_game(game_name_and_clue):
     """
@@ -282,7 +238,7 @@ def main():
                 if choice == 1:
                     name_and_clue = get_random_sports_person()
                 elif choice == 2:
-                    name_and_clue = get_random_music_person()
+                    name_and_clue = get_random_music_person()                    
                 elif choice == 3:
                     name_and_clue = get_random_movies_person()
                 elif choice == 4:
