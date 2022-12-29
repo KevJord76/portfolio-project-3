@@ -7,6 +7,44 @@ import os
 # Import the time library
 import time
 
+# Hangman pics
+HANGMAN_PICS = ['''
+   +---+
+       |
+       |
+       |
+      ===''', '''
+   +---+
+   O   |
+       |
+       |
+      ===''', '''
+   +---+
+   O   |
+   |   |
+       |
+      ===''', '''
+   +---+
+   O   |
+  /|   |
+       |
+      ===''', '''
+   +---+
+   O   |
+  /|\  |
+       |
+      ===''', '''
+   +---+
+   O   |
+  /|\  |
+  /    |
+      ===''', '''
+   +---+
+   O   |
+  /|\  |
+  / \  |
+      ===''']
+
 # Hangman game categories
 categories = ["Sport","Music","Movies","Authors","General Knowledge"]
 
@@ -130,12 +168,34 @@ def get_random_person(category):
 
 def display_life_lines(lives_left):
     """
-    Display the number of life lines the user has left
+    Display the number of life lines the user  
+    has left and the hangman pics
     """
+    
+    # Display the number of life lines the user has left
     if lives_left == 1:
         print(f"You have only {lives_left} life line left...\n")
+        # Print the hangman pic
+        print(HANGMAN_PICS[5])
     else:
         print(f"You have {lives_left} life lines left...\n")
+
+    # Print the hangman pic
+    if lives_left ==  2:
+        print(HANGMAN_PICS[4])    
+    elif lives_left ==  3:
+        print(HANGMAN_PICS[3])
+    elif lives_left ==  4:
+        print(HANGMAN_PICS[2])
+    elif lives_left ==  5:
+        print(HANGMAN_PICS[1])
+    elif lives_left ==  6:
+        print(HANGMAN_PICS[0])
+    elif lives_left ==  0:
+        print(HANGMAN_PICS[6])
+
+    # Print a blank line
+    print("\n")
 
 def display_guessed_letters(correct,incorrect):
     """
@@ -162,6 +222,10 @@ def play_game(game_name_and_clue):
     # Inform the user
     print("\nCan you guess the famous person below?")
     print(f"You have {life_lines} life lines in total\n")
+
+    # Print the initial hangman pic
+    print(HANGMAN_PICS[0])
+    print("\n")
 
     # As long as the user has life lines left, keep playing
     while life_lines > 0: 
@@ -233,6 +297,8 @@ def play_game(game_name_and_clue):
                     elif life_lines == 0:
                         # This game has ended with a loss
                         print("Sorry you are out of life lines! You have lost this game...\n")
+                        # Display the number of life lines left
+                        display_life_lines(life_lines)
                     else:
                         # Display the number of life lines left
                         display_life_lines(life_lines)
@@ -245,7 +311,7 @@ def end_game_message():
     """
     Say good bye to the user 
     """
-    
+
     # Clear the screen
     clear_screen()
     # Bye, bye message
