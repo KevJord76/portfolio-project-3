@@ -128,6 +128,17 @@ def get_random_person(category):
     
     return random_person
 
+def display_life_lines(lives_left, won):
+    """
+    Display the number of life lines the user has left
+    """
+    if lives_left == 1:
+        if not won:
+            print(f"You have only {lives_left} life line left...\n")
+    else:
+        if not won:
+            print(f"You have {lives_left} life lines left...\n")
+
 def play_game(game_name_and_clue):
     """
     Play the hangman game with the randomly selected famous person 
@@ -192,13 +203,16 @@ def play_game(game_name_and_clue):
                 if character in name:
                     print("Well done! This letter is in the famous person's name")
                     right_guesses += character
+                    # Display the number of life lines left
+                    display_life_lines(life_lines, winner)                    
                 else:
                     print("Hard luck, this letter is not in the famous person's name")
                     wrong_guesses += character
                     life_lines -= 1
                     if life_lines == 1:
+                        # Display the number of life lines left
+                        display_life_lines(life_lines, winner)
                         # Ask the user if they want to see a clue
-                        print(f"You have only {life_lines} life line left...\n")
                         see_clue = input("Do you want to see a clue? Y/y to see one, any key to continue:\n")
                         see_clue = see_clue.upper()
                         # Display a clue for the user
@@ -208,7 +222,8 @@ def play_game(game_name_and_clue):
                         # This game has ended with a loss
                         print("Sorry you are out of life lines! You have lost this game...\n")
                     else:
-                        print(f"You have {life_lines} life lines left...\n")
+                        # Display the number of life lines left
+                        display_life_lines(life_lines, winner)  
     
 def end_game_message():
     """
