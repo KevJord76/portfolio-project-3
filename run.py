@@ -236,15 +236,15 @@ def main():
                 print(f"You chose option no {choice}. {category}")                                
                 # Check which category was chosen
                 if choice == 1:
-                    name_and_clue = get_random_sports_person()
+                    name_and_clue = get_random_person(sport)
                 elif choice == 2:
-                    name_and_clue = get_random_music_person()                    
+                    name_and_clue = get_random_person(music)                    
                 elif choice == 3:
-                    name_and_clue = get_random_movies_person()
+                    name_and_clue = get_random_person(movies)
                 elif choice == 4:
-                    name_and_clue = get_random_author()
+                    name_and_clue = get_random_person(authors)
                 else:
-                    name_and_clue = get_random_misc_person()
+                    name_and_clue = get_random_person(general)
 
                 # We now have a name to play the game
                 play_game(name_and_clue)
