@@ -77,6 +77,12 @@ def display_menu():
     # Allow the user to exit the game
     print("(99) to exit\n")
 
+def clear_screen():
+    """
+    Clear the screen
+    """
+    os.system('clear')
+        
 def validate_choice(chosen):
     """
     Validate the menu choice made by the user:
@@ -214,7 +220,7 @@ def main():
     # Get the user's menu choice
     while True:  
         # Clear the screen
-        os.system('clear')
+        clear_screen()
         # Display the menu
         display_menu()      
         choice = input("Please enter your choice:\n")
