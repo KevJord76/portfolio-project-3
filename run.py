@@ -150,6 +150,7 @@ def play_game(game_name_and_clue):
 
     # As long as the user has life lines left, keep playing
     while life_lines > 0: 
+                
         # If this stays at True the user has won
         winner = True
         # Print underscores and spaces to denote the characters in the name or else print the found characters 
@@ -173,6 +174,9 @@ def play_game(game_name_and_clue):
 
         # Ask the user for a character
         character = input("Please enter a character:\n")
+        # Clear the screen
+        clear_screen()
+        
         # Is the input valid?
         valid_input = validate_character(character)
         if not valid_input:
@@ -205,7 +209,7 @@ def play_game(game_name_and_clue):
                         print("Sorry you are out of life lines! You have lost this game...\n")
                     else:
                         print(f"You have {life_lines} life lines left...\n")
-
+    
 def end_game_message():
     """
     Say good bye to the user 
@@ -224,6 +228,9 @@ def main():
         # Display the menu
         display_menu()      
         choice = input("Please enter your choice:\n")
+         # Clear the screen
+        clear_screen()
+
         # Is the input valid?
         valid_input = validate_choice(choice)
         if valid_input:
