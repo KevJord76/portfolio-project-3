@@ -137,6 +137,13 @@ def display_life_lines(lives_left):
     else:
         print(f"You have {lives_left} life lines left...\n")
 
+def display_guessed_letters(correct,incorrect):
+    """
+    Display the guessed correct and incorrect letters
+    """
+    print(f"Correct Guesses: {correct}, Incorrect Guesses: {incorrect}\n")
+
+
 def play_game(game_name_and_clue):
     """
     Play the hangman game with the randomly selected famous person 
@@ -184,8 +191,8 @@ def play_game(game_name_and_clue):
         # Ask the user for a character
         character = input("Please enter a character:\n")
         # Clear the screen
-        clear_screen()
-        
+        clear_screen()   
+
         # Is the input valid?
         valid_input = validate_character(character)
         if not valid_input:
@@ -221,8 +228,11 @@ def play_game(game_name_and_clue):
                         print("Sorry you are out of life lines! You have lost this game...\n")
                     else:
                         # Display the number of life lines left
-                        display_life_lines(life_lines)  
-    
+                        display_life_lines(life_lines)
+
+        # Display the guessed letters                        
+        display_guessed_letters(right_guesses, wrong_guesses)  
+   
 def end_game_message():
     """
     Say good bye to the user 
