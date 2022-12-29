@@ -79,8 +79,6 @@ def display_menu():
 
 def validate_choice(chosen):
     """
-    (try: except code example written in Code Institute's LoveSandwiches walk-through 
-    project used and modified to cater for the needs of this program.)
     Validate the menu choice made by the user:
     Inside the try, converts chosen string into an integer
     Raises valueError if string cannot be converted into an integer 
