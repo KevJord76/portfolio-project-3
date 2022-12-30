@@ -294,7 +294,7 @@ name!")
                     display_life_lines(life_lines)
                 else:
                     print("Hard luck, this letter is not in the famous person'\
-s name, please try again!")
+s name!")
                     wrong_guesses += character
                     life_lines -= 1
                     if life_lines == 1:
@@ -313,8 +313,7 @@ see one, any key to continue:\n")
                             print(f"Clue: {clue}\n")
                     elif life_lines == 0:
                         # This game has ended with a loss
-                        print("Sorry you are out of life lines! You have lost \
-this game...\n")
+                        print("Sorry, you have lost this game!\n")
                         # Display the number of life lines left
                         display_life_lines(life_lines)
                     else:
