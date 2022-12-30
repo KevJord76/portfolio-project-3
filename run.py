@@ -102,6 +102,7 @@ def display_menu():
     """
     Display the hangman game main menu
     """
+    # Welcome the user
     print("-" * 49)
     print("Welcome to Guess the Famous Person Hangman Game")
     print("-" * 49)
@@ -119,6 +120,7 @@ def clear_screen():
     """
     Clear the screen
     """
+    #   Clears the terminal screen 
     os.system('clear')
         
 def validate_choice(chosen):
@@ -128,6 +130,7 @@ def validate_choice(chosen):
     Raises valueError if string cannot be converted into an integer 
     or if the choice is not within the menu parameters or 99
     """
+    # Check the menu choice of the user
     try:
         chosen = int(chosen)
         # Is the user choice valid? 
@@ -160,6 +163,7 @@ def get_random_person(category):
     Convert the chosen category dictionary into a list 
     and randomly select a famous person from the list
     """
+    # Convert to a list
     selected_list = list(category.items())
     # Get a random name from the list
     random_person = random.choice(selected_list)
@@ -171,7 +175,6 @@ def display_life_lines(lives_left):
     Display the number of life lines the user  
     has left and the hangman pics
     """
-    
     # Display the number of life lines the user has left
     if lives_left == 1:
         print(f"You have only {lives_left} life line left...\n")
@@ -197,17 +200,17 @@ def display_life_lines(lives_left):
     # Print a blank line
     print("\n")
 
-def display_guessed_letters(correct,incorrect):
+def display_guessed_letters(correct, incorrect):
     """
     Display the guessed correct and incorrect letters
     """
+    # Keep the user informed of their guessed letters
     print(f"Correct Guesses:    {correct}\nIncorrect Guesses:  {incorrect}\n")
 
 def play_game(game_name_and_clue):
     """
     Play the hangman game with the randomly selected famous person 
     """
-    
     # Store the name and clue
     name = game_name_and_clue[0].upper()
     clue = game_name_and_clue[1]
@@ -232,7 +235,7 @@ def play_game(game_name_and_clue):
                 
         # If this stays at True the user has won
         winner = True
-        # Print underscores and spaces to denote the characters in the name or else print the found characters 
+        # Print underscores and spaces to denote the characters in the name or else print the found characters
         for char in name:
             if (char != " ") and (char not in right_guesses):
                 # Print underscore and space
@@ -311,7 +314,6 @@ def end_game_message():
     """
     Say good bye to the user 
     """
-
     # Clear the screen
     clear_screen()
     # Bye, bye message
@@ -321,7 +323,6 @@ def main():
     """
     Run main program functions
     """
-    
     # Get the user's menu choice
     while True:  
         # Clear the screen
