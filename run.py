@@ -31,22 +31,22 @@ HANGMAN_PICS = ['''
       ===''', '''
    +---+
    O   |
-  /|\  |
+  /|\\  |
        |
       ===''', '''
    +---+
    O   |
-  /|\  |
+  /|\\  |
   /    |
       ===''', '''
    +---+
    O   |
-  /|\  |
-  / \  |
+  /|\\  |
+  / \\  |
       ===''']
 
 # Hangman game categories
-categories = ["Sport","Music","Movies","Authors","General Knowledge"]
+categories = ["Sport", "Music", "Movies", "Authors", "General Knowledge"]
 
 # Sport dictionary of famous names and clues
 sport = {
@@ -217,7 +217,7 @@ def display_guessed_letters(correct, incorrect):
 
 def play_game(game_name_and_clue):
     """
-    Play the hangman game with the randomly selected famous person 
+    Play the hangman game with the randomly selected famous person
     """
     # Store the name and clue
     name = game_name_and_clue[0].upper()
@@ -226,8 +226,8 @@ def play_game(game_name_and_clue):
     # Store the right and wrong guessed characters
     right_guesses = ""
     wrong_guesses = ""
-    
-    # This is the number of wrong guesses the user is allowed 
+
+    # This is the number of wrong guesses the user is allowed
     life_lines = 6
 
     # Inform the user
@@ -239,16 +239,17 @@ def play_game(game_name_and_clue):
     print("\n")
 
     # As long as the user has life lines left, keep playing
-    while life_lines > 0: 
-                
+    while life_lines > 0:
+
         # If this stays at True the user has won
         winner = True
-        # Print underscores and spaces to denote the characters in the name or else print the found characters
+        # Print underscores and spaces to denote the characters in the name
+        # or else print the found characters
         for char in name:
             if (char != " ") and (char not in right_guesses):
                 # Print underscore and space
                 print("_", end=' ')
-                # Still letter(s) to be found 
+                # Still letter(s) to be found
                 winner = False
             else:
                 # Print correct letter and space
@@ -265,41 +266,46 @@ def play_game(game_name_and_clue):
         # Ask the user for a character
         character = input("Please enter a character:\n")
         # Clear the screen
-        clear_screen()   
+        clear_screen()
 
         # Is the input valid?
         valid_input = validate_character(character)
         if not valid_input:
-            print(f'Please note! You must enter only 1 valid name character, you entered:"{character}"')
+            print(f'You must enter only 1 valid character, you entered \
+"{character}", please try again!')
             # Display the number of life lines left
-            display_life_lines(life_lines) 
+            display_life_lines(life_lines)
         else:
             # Valid Input
             character = character.upper()
             # Has this letter been guessed before?
             if (character in right_guesses) or (character in wrong_guesses):
-                print(f'Please note! You have already guessed this letter:"{character}", please try again:')
+                print(f'Please note, you have already guessed \
+this letter:"{character}", please try again!')
                 # Display the number of life lines left
-                display_life_lines(life_lines) 
+                display_life_lines(life_lines)
             else:
                 # Is the character in the name?
                 if character in name:
-                    print("Well done! This letter is in the famous person's name")
+                    print("Well done, this letter is in the famous person's \
+name!")
                     right_guesses += character
                     # Display the number of life lines left
-                    display_life_lines(life_lines)                    
+                    display_life_lines(life_lines)
                 else:
-                    print("Hard luck, this letter is not in the famous person's name")
+                    print("Hard luck, this letter is not in the famous person'\
+s name, please try again!")
                     wrong_guesses += character
                     life_lines -= 1
                     if life_lines == 1:
                         # Display the number of life lines left
                         display_life_lines(life_lines)
                         # Ask the user if they want to see a clue
-                        see_clue = input("Do you want to see a clue? Y/y to see one, any key to continue:\n")
+                        see_clue = input("Do you want to see a clue? Y/y to \
+see one, any key to continue:\n")
                         see_clue = see_clue.upper()
                         # Clear the screen
-                        clear_screen()  
+                        clear_screen()
                         # Display the number of life lines left
                         display_life_lines(life_lines)
                         # Display a clue for the user
@@ -307,38 +313,41 @@ def play_game(game_name_and_clue):
                             print(f"Clue: {clue}\n")
                     elif life_lines == 0:
                         # This game has ended with a loss
-                        print("Sorry you are out of life lines! You have lost this game...\n")
+                        print("Sorry you are out of life lines! You have lost \
+this game...\n")
                         # Display the number of life lines left
                         display_life_lines(life_lines)
                     else:
                         # Display the number of life lines left
                         display_life_lines(life_lines)
 
-        # Display the guessed letters    
-        if life_lines > 0:                    
-            display_guessed_letters(right_guesses, wrong_guesses)  
-   
+        # Display the guessed letters
+        if life_lines > 0:
+            display_guessed_letters(right_guesses, wrong_guesses)
+
+
 def end_game_message():
     """
-    Say good bye to the user 
+    Say good bye to the user
     """
     # Clear the screen
     clear_screen()
     # Bye, bye message
     print("Bye, bye, please play again soon...")
 
+
 def main():
     """
     Run main program functions
     """
     # Get the user's menu choice
-    while True:  
+    while True:
         # Clear the screen
         clear_screen()
         # Display the menu
-        display_menu()      
+        display_menu()
         choice = input("Please enter your choice:\n")
-        
+
         # Is the input valid?
         valid_input = validate_choice(choice)
         if valid_input:
@@ -350,16 +359,16 @@ def main():
             if choice == 99:
                 # Display end of game message
                 end_game_message()
-                exit() 
+                exit()
             else:
                 # Valid menu option chosen
                 category = categories[choice-1]
-                print(f"You chose option no {choice}. {category}")                                
+                print(f"You chose option no {choice}. {category}")
                 # Check which category was chosen
                 if choice == 1:
                     name_and_clue = get_random_person(sport)
                 elif choice == 2:
-                    name_and_clue = get_random_person(music)                    
+                    name_and_clue = get_random_person(music)
                 elif choice == 3:
                     name_and_clue = get_random_person(movies)
                 elif choice == 4:
@@ -371,12 +380,14 @@ def main():
                 play_game(name_and_clue)
 
                 # Ask the user if they want to play again
-                play_again = input("\nDo you want to play again? N/n to exit, any key to continue:\n")
-                play_again = play_again.upper()    
+                play_again = input("\nDo you want to play again? N/n to exit, \
+any key to continue:\n")
+                play_again = play_again.upper()
                 if play_again == "N":
                     # Display end of game message
                     end_game_message()
-                    break 
-  
+                    break
+
+
 # Call the main function
 main()
