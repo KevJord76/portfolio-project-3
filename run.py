@@ -95,8 +95,9 @@ general = {
     'Rihanna': 'Barbadian singer',
     'Winston Churchill': 'Former Prime Minister of the United Kingdom',
     'Volodymyr Zelenskyy': 'Ukrainian leader',
-    'Constance Markievicz': 'Irish politician, revolutionary, nationalist, suffragist, socialist'
+    'Constance Markievicz': 'Irish politician, revolutionary, suffragist'
 }
+
 
 def display_menu():
     """
@@ -111,68 +112,73 @@ def display_menu():
     # Display the hangman game categories
     for i in range(len(categories)):
         # Remember index starts at zero
-        print(str(i+1)+". ", categories[i])  
+        print(str(i+1)+". ", categories[i])
 
     # Allow the user to exit the game
     print("(99) to exit\n")
+
 
 def clear_screen():
     """
     Clear the screen
     """
-    #   Clears the terminal screen 
+    #   Clears the terminal screen
     os.system('clear')
-        
+
+
 def validate_choice(chosen):
     """
     Validate the menu choice made by the user:
     Inside the try, converts chosen string into an integer
-    Raises valueError if string cannot be converted into an integer 
+    Raises valueError if string cannot be converted into an integer
     or if the choice is not within the menu parameters or 99
     """
     # Check the menu choice of the user
     try:
         chosen = int(chosen)
-        # Is the user choice valid? 
-        if not chosen in range(1,len(categories)+1) and not chosen == 99:
+        # Is the user choice valid?
+        if chosen not in range(1, len(categories)+1) and not chosen == 99:
             raise ValueError("incorrect menu option")
     except ValueError as e:
-        print(f"Invalid data: {e}, please try again!\n")  
+        print(f"Invalid data: {e}, please try again!\n")
         # Pause the output to allow the user to see the error message
-        time.sleep(2); 
+        time.sleep(2)
         return False
 
-    return True   
+    return True
+
 
 def validate_character(letter):
     """
-    Check if the user has entered a value from A-Z or a full-stop or a single quote 
-    Also check that only one character has been entered 
+    Check if the user has entered a value from A-Z or a full-stop or a single
+    quote, also check that only one character has been entered
     """
-    # Is the character valid? 
+    # Is the character valid?
     valid_letter = (letter.isalpha()) and (len(letter) == 1)
 
     # Also check for the characters of "." and "'", which a name could contain
     if (letter == ".") or (letter == "'"):
         valid_letter = True
-    
-    return valid_letter   
+
+    return valid_letter
+
 
 def get_random_person(category):
     """
-    Convert the chosen category dictionary into a list 
+    Convert the chosen category dictionary into a list
     and randomly select a famous person from the list
     """
     # Convert to a list
     selected_list = list(category.items())
     # Get a random name from the list
     random_person = random.choice(selected_list)
-    
+
     return random_person
+
 
 def display_life_lines(lives_left):
     """
-    Display the number of life lines the user  
+    Display the number of life lines the user
     has left and the hangman pics
     """
     # Display the number of life lines the user has left
@@ -184,21 +190,22 @@ def display_life_lines(lives_left):
         print(f"You have {lives_left} life lines left...\n")
 
     # Print the hangman pic
-    if lives_left ==  2:
-        print(HANGMAN_PICS[4])    
-    elif lives_left ==  3:
+    if lives_left == 2:
+        print(HANGMAN_PICS[4])
+    elif lives_left == 3:
         print(HANGMAN_PICS[3])
-    elif lives_left ==  4:
+    elif lives_left == 4:
         print(HANGMAN_PICS[2])
-    elif lives_left ==  5:
+    elif lives_left == 5:
         print(HANGMAN_PICS[1])
-    elif lives_left ==  6:
+    elif lives_left == 6:
         print(HANGMAN_PICS[0])
-    elif lives_left ==  0:
+    elif lives_left == 0:
         print(HANGMAN_PICS[6])
 
     # Print a blank line
     print("\n")
+
 
 def display_guessed_letters(correct, incorrect):
     """
@@ -206,6 +213,7 @@ def display_guessed_letters(correct, incorrect):
     """
     # Keep the user informed of their guessed letters
     print(f"Correct Guesses:    {correct}\nIncorrect Guesses:  {incorrect}\n")
+
 
 def play_game(game_name_and_clue):
     """
