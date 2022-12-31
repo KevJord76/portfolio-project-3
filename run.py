@@ -291,7 +291,7 @@ def play_game(game_name_and_clue):
                 # Is the character in the name?
                 if character in name:
                     print(" Well done, this character is in the famous person'\
- s name!")
+s name!")
                     right_guesses += character
                     # Display the number of life lines left
                     display_life_lines(life_lines)
