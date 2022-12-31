@@ -1,31 +1,7 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<!--- Python terminal game -->
+# Guess Famous Person (Hangman Game)
 
-Welcome KevJord76,
+<!--- Game overview -->
+Guess Famous Person (Hangman Game) is a python terminal game, which runs in the Code Institute mock terminal on Heroku. 
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
-
-## Reminders
-
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
-
-## Creating the Heroku app
-
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
-
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
+Users can try to figure out who the random famous person is chosen by the computer. They must try to guess the characters that are in the name and reveal who the person is. This is a fun game for all of the family and friends to play. This is the kind of game that users can play during the Christmas holidays and other get-togethers to keep themselves entertained. It suits everyone too, as there are a number of categories to choose from. The user can choose the category that they like best, e.g. Sport or Music etc. They then try to guess the person by entering the characters they feel the name could contain. Six lifelines are available to the user. Once the game is over, either after a win or a loss, the player can play again or end the game, enjoy!
