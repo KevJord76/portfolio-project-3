@@ -26,3 +26,8 @@ Once a valid category is chosen the game begins
 The user has six lifelines, i.e. they are allowed to make five wrong guesses, the game ends if the user makes a sixth wrong guess
 
 If the user correctly guesses the characters in the famous person's name, they win the game
+
+<!--- Main Menu image -->
+<p align="center">
+  <img src="./assets/images/menu.jpg"/>  
+</p>

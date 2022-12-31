@@ -105,17 +105,17 @@ def display_menu():
     """
     # Welcome the user
     print("-" * 49)
-    print("Welcome to Guess the Famous Person Hangman Game")
+    print(" Welcome to Guess the Famous Person Hangman Game")
     print("-" * 49)
-    print("\nPlease select a Category:")
+    print("\n Please select a Category:")
 
     # Display the hangman game categories
     for i, category in enumerate(categories):
         # Remember index starts at zero
-        print(str(i+1)+". ", category)
+        print(" " + str(i+1)+". ", category)
 
     # Allow the user to exit the game
-    print("(99) to exit\n")
+    print(" (99) to exit\n")
 
 
 def clear_screen():
@@ -140,7 +140,7 @@ def validate_choice(chosen):
         if chosen not in range(1, len(categories)+1) and chosen != 99:
             raise ValueError("incorrect menu option")
     except ValueError as error:
-        print(f"Invalid data: {error}, please try again!\n")
+        print(f" Invalid data: {error}, please try again!\n")
         # Pause the output to allow the user to see the error message
         time.sleep(2)
         return False
@@ -183,11 +183,11 @@ def display_life_lines(lives_left):
     """
     # Display the number of life lines the user has left
     if lives_left == 1:
-        print(f"You have only {lives_left} life line left...\n")
+        print(f" You have only {lives_left} life line left...\n")
         # Print the hangman pic
         print(HANGMAN_PICS[5])
     else:
-        print(f"You have {lives_left} life lines left...\n")
+        print(f" You have {lives_left} life lines left...\n")
 
     # Print the hangman pic
     if lives_left == 2:
@@ -212,7 +212,8 @@ def display_guessed_chars(correct, incorrect):
     Display the guessed correct and incorrect characters
     """
     # Keep the user informed of their guessed characters
-    print(f"Correct Guesses:    {correct}\nIncorrect Guesses:  {incorrect}\n")
+    print(f" Correct Guesses:    {correct}\n Incorrect Guesses:  {incorrect}\n\
+")
 
 
 def play_game(game_name_and_clue):
@@ -231,8 +232,8 @@ def play_game(game_name_and_clue):
     life_lines = 6
 
     # Inform the user
-    print("\nCan you guess the famous person below?")
-    print(f"You have {life_lines} life lines in total\n")
+    print("\n Can you guess the famous person below?")
+    print(f" You have {life_lines} life lines in total\n")
 
     # Print the initial hangman pic
     print(HANGMAN_PICS[0])
@@ -243,6 +244,8 @@ def play_game(game_name_and_clue):
 
         # If this stays at True the user has won
         winner = True
+        # Move the output from the edge of the screen
+        print("", end=' ')
         # Print underscores and spaces to denote the characters in the name
         # or else print the found characters
         for char in name:
@@ -259,20 +262,20 @@ def play_game(game_name_and_clue):
         # Has the user won?
         if winner:
             # This game has ended with a win
-            print("Congrats! You have won the game!")
-            print(f"You have guessed the famous person: {name}")
+            print(" Congrats! You have won the game!")
+            print(f" You have guessed the famous person: {name}")
             break
 
         # Ask the user for a character
-        character = input("Please enter a character:\n")
+        character = input(" Please enter a character:\n ")
         # Clear the screen
         clear_screen()
 
         # Is the input valid?
         valid_input = validate_character(character)
         if not valid_input:
-            print(f'You must enter only 1 valid character, you entered \
-"{character}", please try again!')
+            print(f' You must enter only 1 valid character, you entered\
+ "{character}", please try again!')
             # Display the number of life lines left
             display_life_lines(life_lines)
         else:
@@ -280,29 +283,29 @@ def play_game(game_name_and_clue):
             character = character.upper()
             # Has this character been guessed before?
             if (character in right_guesses) or (character in wrong_guesses):
-                print(f'Please note, you have already guessed \
-this character:"{character}", please try again!')
+                print(f' Please note, you have already guessed\
+ this character:"{character}", please try again!')
                 # Display the number of life lines left
                 display_life_lines(life_lines)
             else:
                 # Is the character in the name?
                 if character in name:
-                    print("Well done, this character is in the famous person's\
- name!")
+                    print(" Well done, this character is in the famous person'\
+ s name!")
                     right_guesses += character
                     # Display the number of life lines left
                     display_life_lines(life_lines)
                 else:
-                    print("Hard luck, this character is not in the famous pers\
-on's name!")
+                    print(" Hard luck, this character is not in the famous per\
+son's name!")
                     wrong_guesses += character
                     life_lines -= 1
                     if life_lines == 1:
                         # Display the number of life lines left
                         display_life_lines(life_lines)
                         # Ask the user if they want to see a clue
-                        see_clue = input("Do you want to see a clue? Y/y to \
-see one, any key to continue:\n")
+                        see_clue = input(" Do you want to see a clue? Y/y to\
+ see one, any key to continue:\n ")
                         see_clue = see_clue.upper()
                         # Clear the screen
                         clear_screen()
@@ -310,10 +313,10 @@ see one, any key to continue:\n")
                         display_life_lines(life_lines)
                         # Display a clue for the user
                         if see_clue == "Y":
-                            print(f"Clue: {clue}\n")
+                            print(f" Clue: {clue}\n")
                     elif life_lines == 0:
                         # This game has ended with a loss
-                        print("Sorry, you have lost this game!\n")
+                        print(" Sorry, you have lost this game!\n")
                         # Display the number of life lines left
                         display_life_lines(life_lines)
                     else:
@@ -332,7 +335,7 @@ def end_game_message():
     # Clear the screen
     clear_screen()
     # Bye, bye message
-    print("Bye, bye, please play again soon...")
+    print(" Bye, bye, please play again soon...")
 
 
 def main():
@@ -345,7 +348,7 @@ def main():
         clear_screen()
         # Display the menu
         display_menu()
-        choice = input("Please enter your choice:\n")
+        choice = input(" Please enter your choice:\n ")
 
         # Is the input valid?
         valid_input = validate_choice(choice)
@@ -362,7 +365,7 @@ def main():
             else:
                 # Valid menu option chosen
                 category = categories[choice-1]
-                print(f"You chose option no {choice}. {category}")
+                print(f" You chose option no {choice}. {category}")
                 # Check which category was chosen
                 if choice == 1:
                     name_and_clue = get_random_person(sport)
@@ -379,8 +382,8 @@ def main():
                 play_game(name_and_clue)
 
                 # Ask the user if they want to play again
-                play_again = input("\nDo you want to play again? N/n to exit, \
-any key to continue:\n")
+                play_again = input("\n Do you want to play again? N/n to exit,\
+ any key to continue:\n ")
                 play_again = play_again.upper()
                 if play_again == "N":
                     # Display end of game message
