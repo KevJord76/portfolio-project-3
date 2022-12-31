@@ -11,3 +11,18 @@ Users can try to figure out who the random famous person is chosen by the comput
 <p align="center">
   <img src="./assets/images/responsive.jpg"/>  
 </p>
+
+<!--- Outline how to play the game -->
+# How to play
+
+Guess Famous Person (Hangman Game) is based on the classic pen-and-paper hangman game. You can read more about it on [Wikipedia](https://en.wikipedia.org/wiki/Hangman_(game))
+
+In this version the user has to guess a random famous person's name rather than a word 
+
+There are 5 categories to choose from: Sport, Music, Movies, Authors and General Knowledge
+
+Once a valid category is chosen the game begins
+
+The user has six lifelines, i.e. they are allowed to make five wrong guesses, the game ends if the user makes a sixth wrong guess
+
+If the user correctly guesses the characters in the famous person's name, they win the game
