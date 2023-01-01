@@ -181,6 +181,15 @@ Players try to figure out who the random famous person is chosen by the computer
   <img src="./assets/images/invalid-game-3.jpg"/>  
 </p>
 
+## Future Features
+
+- Include more than 5 categories 
+
+- At the moment the famous names in the game are hard coded in the program, in the future these names should come from a data source like a database or a spreadsheet  
+
+- Include a feature like: easy, medium and hard options in the game, which would include giving more clues as the player loses lifelines
+
+
 
 
 
