@@ -30,7 +30,7 @@ Players try to figure out who the random famous person is chosen by the computer
 
   - The player has six lifelines, i.e. they are allowed to make five wrong guesses, the game ends if the player makes a sixth wrong guess
 
-  - If the player correctly guesses the characters in the famous person's name, they win the game
+  - If the player correctly guesses all of the characters in the famous person's name, they win the game
 
 <!--- Outline the features of the game -->
 # Features
@@ -111,6 +111,33 @@ Players try to figure out who the random famous person is chosen by the computer
 <!--- Clue image 1 -->
 <p align="center">
   <img src="./assets/images/clue1.jpg"/>  
+</p>
+
+- __Win the Game__
+  
+    - When the player has guessed correctly all of the characters in the name, they have won the game
+
+<!--- Won image -->
+<p align="center">
+  <img src="./assets/images/won.jpg"/>  
+</p>
+
+- __Lose the Game__
+  
+    - When the player has run out of lifelines, they have lost the game
+
+<!--- Lose image -->
+<p align="center">
+  <img src="./assets/images/lost.jpg"/>  
+</p>
+
+- __Play Again__
+  
+    - When the player has lost the game, they are asked if they want to play again
+
+<!--- Play again image -->
+<p align="center">
+  <img src="./assets/images/again.jpg"/>  
 </p>
 
 
