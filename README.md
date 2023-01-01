@@ -32,3 +32,27 @@ Users can try to figure out who the random famous person is chosen by the comput
 
   - If the user correctly guesses the characters in the famous person's name, they win the game
 
+<!--- Outline the features of the game -->
+# Features
+
+## Existing Features
+
+- __Random Name Generation__
+
+    - Once a category is chosen a random famous person's name is generated from that category
+
+    - The player then has to figure out who this person is by guessing characters they think are in the name
+
+    - When the player has only one lifeline left they are asked if they want to see a clue
+
+    - Accepts user input
+
+<!--- Clue image -->
+<p align="center">
+  <img src="./assets/images/clue.jpg"/>  
+</p>
+
+    - Accepts user input
+
+
+    
