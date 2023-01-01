@@ -43,16 +43,35 @@ Users can try to figure out who the random famous person is chosen by the comput
 
     - The player then has to figure out who this person is by guessing characters they think are in the name
 
+
+<!--- Sport image -->
+<p align="center">
+  <img src="./assets/images/sport.jpg"/>  
+</p>
+
+- __Provide a Clue__
+  
     - When the player has only one lifeline left they are asked if they want to see a clue
 
-    - Accepts user input
+    - If they answer "Y/y", a clue is provided
 
 <!--- Clue image -->
 <p align="center">
   <img src="./assets/images/clue.jpg"/>  
 </p>
 
-    - Accepts user input
+<!--- Clue image 1 -->
+<p align="center">
+  <img src="./assets/images/clue1.jpg"/>  
+</p>
+
+
+    
+
+    
+
+
+  
 
 
     
