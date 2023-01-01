@@ -189,6 +189,17 @@ Players try to figure out who the random famous person is chosen by the computer
 
 - Include a feature like: easy, medium and hard options in the game, which would include giving more clues as the player loses lifelines
 
+<!--- Outline the data model used for the game -->
+# Data Model
+
+I decided to use Python dictionaries as my primary data model.
+
+Each of the 5 categories in the game were set-up as a separate dictionary. The reason that I chose to use dictionaries was so that I could have a clue associated with each name. 
+
+Therefore, this enhanced the speed and efficiency of retrieving the famous person's name and clue from the dictionary. 
+
+I also used a Python list to store the game categories, again for ease of access.
+
 
 
 
