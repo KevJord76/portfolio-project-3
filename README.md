@@ -12,13 +12,37 @@ Players try to figure out who the random famous person is chosen by the computer
   <img src="./assets/images/responsive.jpg"/>  
 </p>
 
-<!--- Outline how to play the game -->
-# How to play
+<!--- Outline the user interface design principles -->
+# User Interface Design
+
+As the designer of the hangman game, I aimed to have a finished application that is consistent, predictable, useful, intuitive and good fun to play. It should also be easily learnable. The menu/screens should be self explanatory and not confuse the user. The key principle and theme of the game is to provide the player with the following information and keep the player informed at all times:
+
+- What does the game involve?
+- How do you play the game?
+- How do you win the game?
+- How do you lose the game?
 
 <!--- Main Menu image -->
 <p align="center">
   <img src="./assets/images/menu.jpg"/>  
 </p>
+
+<!--- Outline the user/site goals -->
+# User / Site Goals
+
+- Clear the terminal when appropriate
+- Consistency of user messages provided to the player
+- Highlight to the player when they have made an invalid choice
+- Highlight to the player when they have entered an invalid character
+- Keep the player informed of how many lifelines they have left 
+- Keep the player informed of what characters they have guessed already
+- Provide the player with a clue when they have only one lifeline left
+- Inform the player when they have won
+- Inform the player when they have lost
+- Ask the player if they want to play again
+
+<!--- Outline how to play the game -->
+# How to play
 
   - Guess the Famous Person (Hangman Game) is based on the classic pen-and-paper hangman game. You can read more about it on [Wikipedia](https://en.wikipedia.org/wiki/Hangman_(game))
   - In this version the player has to guess a random famous person's name rather than a word 
@@ -114,7 +138,7 @@ Players try to figure out who the random famous person is chosen by the computer
 </p>
 
 - __Play Again__  
-    - When the player has lost the game, they are asked if they want to play again
+    - When the player has finished the game, they are asked if they want to play again
 
 <!--- Play again image -->
 <p align="center">
@@ -140,7 +164,7 @@ Players try to figure out who the random famous person is chosen by the computer
 - __Game Characters Entry__
     - The game characters entered must be alpha characters, A-Z or "." or "'"
     - Some names can contain a period character or a single quote, e.g. J. K. Rowling, Seán O'Casey
-    - Only 1 character can be entered at a time
+    - Only one character can be entered at a time
 
 <!--- Invalid game image 1 -->
 <p align="center">
@@ -183,7 +207,7 @@ I have manually tested this application by doing the following:
 - I entered invalid characters when choosing a category, I received the expected error message
 - I entered invalid characters when entering a name character, I received the expected error message
 - I entered the same character twice when entering a name character, I received the expected error message
-- I entered more than 1 character when entering a name character, I received the expected error message
+- I entered more than one character when entering a name character, I received the expected error message
 - I tested that my application works in different browsers: Microsoft Edge, Google Chrome and Mozilla Firefox
 
 <!--- Microsoft Edge, Google Chrome and Mozilla Firefox images -->
@@ -209,7 +233,7 @@ Mozilla Firefox
 - I had to use a time delay when displaying the menu options error messages. As I was clearing the screen, the error message was not displaying, I included a 2 second pause to allow the error message to display on the screen 
 - I noticed that when I deployed my project the output was too close to the left hand edge of the terminal screen, I had to include a space character to move the output to the right slightly 
 - I also noticed when I deployed my project the output was too close to the top of the terminal screen, I had to include a carriage return to move the output down one line 
-- I had to remember that my dictionaries and lists used zero indexing. I was selecting the wrong category until I subtracted 1 from my index variable  
+- I had to remember that my dictionaries and lists used zero indexing. I was selecting the wrong category until I subtracted one from my index variable  
 
 ### Remaining Bugs
 
