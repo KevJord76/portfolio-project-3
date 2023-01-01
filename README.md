@@ -140,10 +140,48 @@ Players try to figure out who the random famous person is chosen by the computer
   <img src="./assets/images/again.jpg"/>  
 </p>
 
+## Input Validation and Error-Checking
 
-    
+- __Menu Options__
 
+    - The menu option entered must be from 1 to 5 or 99 to exit
+
+    - An invalid character cannot be entered, only numbers are accepted
     
+<!--- Invalid menu image 1 -->
+<p align="center">
+  <img src="./assets/images/invalid-menu-1.jpg"/>  
+</p>
+
+<!--- Invalid menu image 2 -->
+<p align="center">
+  <img src="./assets/images/invalid-menu-2.jpg"/>  
+</p>
+
+- __Game Characters Entry__
+
+    - The game characters entered must be alpha characters, A-Z or "." or "'"
+
+    - Some names can contain a period character or a single quote, e.g. J. K. Rowling, Seán O'Casey
+
+    - Only 1 character can be entered at a time
+
+<!--- Invalid game image 1 -->
+<p align="center">
+  <img src="./assets/images/invalid-game-1.jpg"/>  
+</p>
+
+<!--- Invalid game image 2 -->
+<p align="center">
+  <img src="./assets/images/invalid-game-2.jpg"/>  
+</p>   
+    
+<!--- Invalid game image 3 -->
+<p align="center">
+  <img src="./assets/images/invalid-game-3.jpg"/>  
+</p>
+
+
 
 
   
