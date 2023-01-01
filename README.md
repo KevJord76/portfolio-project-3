@@ -184,7 +184,7 @@ I have manually tested this application by doing the following:
 - I entered invalid characters when entering a name character, I received the expected error message
 - I entered the same character twice when entering a name character, I received the expected error message
 - I entered more than 1 character when entering a name character, I received the expected error message
-- I tested that my application works in different browsers: Microsoft Edge, Google Chrome and Mozilla Firefox, see below
+- I tested that my application works in different browsers: Microsoft Edge, Google Chrome and Mozilla Firefox
 
 <!--- Microsoft Edge, Google Chrome and Mozilla Firefox images -->
 Microsoft Edge
@@ -257,6 +257,18 @@ To Fork:
 5. Optionally, add a description of your fork.
 6. Choose whether to copy only the default branch or all branches to the new fork.
 7. Click Create fork.
+
+<!--- List the credits -->
+# Credits 
+
+I would like to say thanks to Chris Quinn, who was my mentor for this project. He provided me with a lot of valuable knowledge and gave me the idea to create a hangman game.
+
+## Content
+
+- Code Institute for the deployment terminal
+- Wikipedia for the details of the hangman game
+- The idea to use the "try: except" validation routine for the menu options was based on Code Institute's Love Sandwiches walkthrough project and modified to suit the needs of this application 
+- The hangman pictures list was taken from [Invent with Python](https://inventwithpython.com/)
 
 
 
