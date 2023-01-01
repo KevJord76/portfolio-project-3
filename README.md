@@ -30,7 +30,7 @@ As the designer of the hangman game, I aimed to have a finished application that
 <!--- Outline the user/site goals -->
 # User / Site Goals
 
-- Clear the terminal when appropriate
+- Clear the terminal when appropriate, I imported the os library to implement this requirement
 - Consistency of user messages provided to the player
 - Highlight to the player when they have made an invalid choice
 - Highlight to the player when they have entered an invalid character
@@ -57,7 +57,7 @@ As the designer of the hangman game, I aimed to have a finished application that
 ## Existing Features
 
 - __Random Name Generation__
-    - Once a category is chosen a random famous person's name is generated from that category
+    - Once a category is chosen a random famous person's name is generated from that category, I imported the random library to implement this requirement
     - The player then has to figure out who this person is by guessing characters they think are in the name
 
 <!--- Sport image -->
@@ -230,7 +230,7 @@ Mozilla Firefox
 
 ### Solved Bugs
 
-- I had to use a time delay when displaying the menu options error messages. As I was clearing the screen, the error message was not displaying, I included a 2 second pause to allow the error message to display on the screen 
+- I had to use a time delay when displaying the menu options error messages. As I was clearing the screen, the error message was not displaying, I included a 2 second pause to allow the error message to display on the screen. I imported the time library to implement this requirement 
 - I noticed that when I deployed my project the output was too close to the left hand edge of the terminal screen, I had to include a space character to move the output to the right slightly 
 - I also noticed when I deployed my project the output was too close to the top of the terminal screen, I had to include a carriage return to move the output down one line 
 - I had to remember that my dictionaries and lists used zero indexing. I was selecting the wrong category until I subtracted one from my index variable  
