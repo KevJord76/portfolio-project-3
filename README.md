@@ -198,7 +198,68 @@ Each of the 5 categories in the game were set-up as a separate dictionary. The r
 
 Therefore, this enhanced the speed and efficiency of retrieving the famous person's name and clue from the dictionary. 
 
-I also used a Python list to store the game categories, again for ease of access.
+I also used Python lists to store the game categories and hangman pictures, again for ease of access.
+
+<!--- Outline my testing -->
+# Testing
+
+I have manually tested this application by doing the following: 
+
+- I entered a category number not in the list, I received the expected error message
+
+- I entered invalid characters when choosing a category, I received the expected error message
+
+- I entered invalid characters when entering a name character, I received the expected error message
+
+- I entered the same character twice when entering a name character, I received the expected error message
+
+- I entered more than 1 character when entering a name character, I received the expected error message
+
+- I tested that my application works in different browsers: Microsoft Edge, Google Chrome and Mozilla Firefox, see below
+
+<!--- Microsoft Edge, Google Chrome and Mozilla Firefox images -->
+Microsoft Edge
+<p align="center">
+  <img src="./assets/images/edge.jpg"/>  
+</p>
+
+Google Chrome
+<p align="center">
+  <img src="./assets/images/chrome.jpg"/>  
+</p>
+
+Mozilla Firefox
+<p align="center">
+  <img src="./assets/images/firefox.jpg"/>
+</p>
+
+## Bugs
+
+### Solved Bugs
+
+- I had to use a time delay when displaying the menu options error messages. As I was clearing the screen, the error message was not displaying, I included a 2 second pause to allow the error message to display on the screen 
+
+- I noticed that when I deployed my project the output was too close to the left hand edge of the terminal screen, I had to include a space character to move the output to the right slightly 
+
+- I also noticed when I deployed my project the output was too close to the top of the terminal screen, I had to include a carriage return to move the output down one line 
+
+- I had to remember that my dictionaries and lists used zero indexing. I was selecting the wrong category until I subtracted 1 from my index variable  
+
+### Remaining Bugs
+
+- No bugs remaining
+
+### Validator Testing
+
+- PEP8
+
+  - No errors were returned from PEP8 [Python Validator](https://pep8ci.herokuapp.com/)
+
+<!--- PEP8 image -->
+<p align="center">
+  <img src="./assets/images/linter.jpg"/>  
+</p>
+
 
 
 
