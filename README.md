@@ -198,6 +198,17 @@ Therefore, this enhanced the speed and efficiency of retrieving the famous perso
 
 I also used Python lists to store the game categories and hangman pictures, again for ease of access.
 
+<!--- Outline the data flow diagrams used for the game -->
+# Data Flow Diagrams
+
+<p align="center">
+  <img src="./assets/images/data-flow-1.jpg"/>  
+</p>
+
+<p align="center">
+  <img src="./assets/images/data-flow-2.jpg"/>  
+</p>
+
 <!--- Outline my testing -->
 # Testing
 
