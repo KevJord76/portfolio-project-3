@@ -201,10 +201,12 @@ I also used Python lists to store the game categories and hangman pictures, agai
 <!--- Outline the data flow diagrams used for the game -->
 # Data Flow Diagrams
 
+Diagram 1
 <p align="center">
   <img src="./assets/images/data-flow-1.jpg"/>  
 </p>
 
+Diagram 2
 <p align="center">
   <img src="./assets/images/data-flow-2.jpg"/>  
 </p>
